@@ -20,7 +20,7 @@ def saveNewTabScore():
 # Get all existing tab scores   
 @app.route('/tabs', methods=['GET'])
 @cross_origin()
-def getTabsScore(id):
+def getTabsScore():
     return tabs.getTabsScore(database)
 
 

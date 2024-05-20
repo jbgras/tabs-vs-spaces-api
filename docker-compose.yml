@@ -4,6 +4,10 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.dev
+    environment:
+      - COSMOS_ENDPOINT=${COSMOS_ENDPOINT}
+      - COSMOS_KEY=${COSMOS_KEY}
+      - COSMOS_DATABASE=${COSMOS_DATABASE}
     ports:
       - 5000:5000
     volumes:
