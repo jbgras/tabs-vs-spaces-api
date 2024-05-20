@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_cors import CORS, cross_origin
 from dotenv import load_dotenv  
@@ -23,6 +24,10 @@ def saveNewTabScore():
 def getTabsScore():
     return tabs.getTabsScore(database)
 
-
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    port = int(os.getenv('PORT', 5001))
+    app.run(
+        debug=True,
+        host='0.0.0.0',
+        port=port
+    )

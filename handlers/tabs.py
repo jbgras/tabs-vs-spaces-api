@@ -1,4 +1,4 @@
-from flask import request, Response, jsonify
+from flask import Response
 import uuid
 
 def saveTabScore(database):
@@ -9,7 +9,8 @@ def saveTabScore(database):
         'type': 'tab'
     })     
 
-    return jsonify(""), 201
+    return Response(status=201)
+
 
 def getTabsScore(database):
     container = database.get_container_client("scores")
@@ -25,4 +26,4 @@ def getTabsScore(database):
 
     tabItemCount = str(items[0])
 
-    return tabItemCount, 200
+    return Response(tabItemCount, status=200)
