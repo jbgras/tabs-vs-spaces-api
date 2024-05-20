@@ -1,0 +1,18 @@
+services:
+  dev:
+    image: tabs-vs-spaces-api/dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/app/
+
+  release:
+    image: tabs-vs-spaces-api/release
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:80
