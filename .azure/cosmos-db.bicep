@@ -7,6 +7,9 @@ param location string = resourceGroup().location
 @description('The primary region for the Cosmos DB account.')
 param primaryRegion string = location
 
+@description('Database name')
+param databaseName string
+
 resource account 'Microsoft.DocumentDB/databaseAccounts@2022-05-15' = {
   name: accountName
   location: location
@@ -28,11 +31,11 @@ resource account 'Microsoft.DocumentDB/databaseAccounts@2022-05-15' = {
 }
 
 resource database 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases@2022-05-15' = {
-  name: 'tabvsspaces'
+  name: databaseName
   parent: account
   properties: {
     resource: {
-      id: 'tabvsspaces'
+      id: databaseName
     }
   }
 }

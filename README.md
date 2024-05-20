@@ -17,7 +17,7 @@ Next, create a `.env` file in the the root of the project:
 ```env
 COSMOS_ENDPOINT=XXX
 COSMOS_KEY=XXX
-COSMOS_DATABASE=tabsvsspaces
+COSMOS_DATABASE=tabs-vs-spaces
 ```
 
 ## One-time Azure setup
@@ -36,7 +36,7 @@ Here are the values you should use in your deployment:
 | --------------- | ------------- |
 | `Resource Group`| `tabs-vs-spaces` |
 | `Location`      | `westus`     |
-| `Cosmos Account`| `tabsvsspaces` |
+| `Cosmos Account`| `tabs-vs-spaces` |
 
 
 ### Setup the Resource Group
